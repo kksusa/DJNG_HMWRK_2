@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+</head>
+<body>
+
+<h1>Заказы клиента {{ user.name }}</h1>
+
+    <table border='1'>
+        <tr>
+            <td>Номер заказа</td>
+            <td>Товары заказа</td>
+            <td>Сумма заказа</td>
+            <td>Дата заказа</td>
+        </tr>
+        {% for order, products in orders.items %}
+        <tr>
+            <td>{{ order.id }}</td>
+            <td>{% for product in products %}
+                {{ product.name }}
+                <br>
+                {% endfor %}
+                </td>
+            <td>{{ order.sum_price }}</td>
+            <td>{{ order.order_date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+</body>
+</html>
