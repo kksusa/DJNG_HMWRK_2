@@ -18,6 +18,7 @@ class Product(models.Model):
     price = models.DecimalField(default=1000.0, decimal_places=2, max_digits=10)
     count = models.IntegerField(default=1)
     adding_date = models.DateTimeField(auto_now=True)
+    image = models.ImageField(default=None)
 
     def __str__(self):
         return f'{self.name} - {self.price}'
